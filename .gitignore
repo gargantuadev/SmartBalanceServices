@@ -132,3 +132,4 @@ dist
 
 .venv
 workspace.xml
+.idea
