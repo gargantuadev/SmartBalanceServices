@@ -6,12 +6,12 @@ categories_bp = Blueprint("categories", __name__)
 # Temporary in-memory storage for categories
 categories = []
 
-@categories_bp.route('/get-categories', methods=['GET'])
+@categories_bp.route('/get', methods=['GET'])
 def get_categories():
     """Fetch all categories."""
     return jsonify({"categories": categories})
 
-@categories_bp.route('/add-category', methods=['POST'])
+@categories_bp.route('/add', methods=['POST'])
 def add_category():
     """Add a new category."""
     data = request.get_json()
