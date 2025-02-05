@@ -9,6 +9,6 @@ def create_app():
     app = Flask(__name__)
     CORS(app)  # Enable CORS
     app.config.from_object(DevelopmentConfig)
-    app.register_blueprint(categories_bp, url_prefix='/api')
+    app.register_blueprint(categories_bp, url_prefix='/categories')
     #app.register_blueprint(api_bp, url_prefix='/api')  # Register the API blueprint
     return app
