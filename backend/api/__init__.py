@@ -1,7 +1,6 @@
 # __init__.py
 from flask import Flask
 from flask_cors import CORS
-from .routes import api_bp
 from config.settings import DevelopmentConfig, ProductionConfig
 from .categories import categories_bp
 
