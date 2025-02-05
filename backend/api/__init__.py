@@ -10,5 +10,5 @@ def create_app():
     CORS(app)  # Enable CORS
     app.config.from_object(DevelopmentConfig)
     app.register_blueprint(categories_bp, url_prefix='/api')
-    app.register_blueprint(api_bp, url_prefix='/api')  # Register the API blueprint
+    #app.register_blueprint(api_bp, url_prefix='/api')  # Register the API blueprint
     return app
