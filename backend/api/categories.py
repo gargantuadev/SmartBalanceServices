@@ -3,17 +3,17 @@ from flask import Blueprint, jsonify, request
 # Create a blueprint for categories
 categories_bp = Blueprint("categories", __name__)
 
-# Temporary in-memory storage for categories
+# TODO: remove this, Temporary in-memory storage for categories
 categories = []
 
 @categories_bp.route('/get', methods=['GET'])
 def get_categories():
-    """Fetch all categories."""
+    # TODO: this will need to be modified to get categories for a specific user
     return jsonify({"categories": categories})
 
 @categories_bp.route('/add', methods=['POST'])
 def add_category():
-    """Add a new category."""
+    # TODO: this will need to be modify with the user
     data = request.get_json()
     category_name = data.get('name')
     selected_icon = data.get('icon')
