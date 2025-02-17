@@ -1,11 +1,10 @@
 from flask import Blueprint, jsonify, request, current_app
 from flask_sqlalchemy import SQLAlchemy
+from .db import db
 
 # Create a blueprint for categories
 categories_bp = Blueprint("categories", __name__)
 
-# Get the SQLAlchemy instance from the app
-db = current_app.config["DB"]
 
 # Define the Category model
 class Category(db.Model):
