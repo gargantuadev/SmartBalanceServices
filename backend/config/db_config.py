@@ -6,8 +6,6 @@ ENV_PATH = os.path.join(BASE_DIR, ".env")
 
 load_dotenv(ENV_PATH)
 
-load_dotenv()
-
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 if not DATABASE_URL:

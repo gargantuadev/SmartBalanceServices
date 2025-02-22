@@ -5,7 +5,7 @@ from .db import db
 # Create a blueprint for categories
 categories_bp = Blueprint("categories", __name__)
 
-
+"""
 # Define the Category model
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # Unique ID
@@ -33,8 +33,9 @@ def get_categories():
     if not user_email:
         return jsonify({"error": "User email is required"}), 400
 
-    categories = Category.query.filter_by(user_email=user_email).all()
-    return jsonify({"categories": [category.to_dict() for category in categories]})
+    #categories = Category.query.filter_by(user_email=user_email).all()
+    #return jsonify({"categories": [category.to_dict() for category in categories]})
+    return jsonify({"categories": "CIAO"})
 
 # Add a new category (Enforcing Unique Constraint)
 @categories_bp.route('/add', methods=['POST'])
@@ -66,6 +67,8 @@ def add_category():
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": "An error occurred while creating the category", "details": str(e)}), 500
+
+    
 
 # Delete a category
 @categories_bp.route('/delete', methods=['DELETE'])
@@ -111,7 +114,9 @@ def update_category():
 
 
 
-"""from flask import Blueprint, jsonify, request
+"""
+
+from flask import Blueprint, jsonify, request
 
 # Create a blueprint for categories
 categories_bp = Blueprint("categories", __name__)
@@ -144,4 +149,5 @@ def add_category():
         "user_email": user_email
     }
     categories.append(new_category)
-    return jsonify({"message": "Category created successfully", "category": new_category}), 201"""
+    
+    return jsonify({"message": "Category created successfully", "category": new_category}), 201
