@@ -4,7 +4,7 @@ from flask_cors import CORS
 #from flask_sqlalchemy import SQLAlchemy
 
 from config.settings import DevelopmentConfig, ProductionConfig
-from config.db_config import DATABASE_URL
+#from config.db_config import DATABASE_URL
 from .categories import categories_bp
 #from .db import db
 
