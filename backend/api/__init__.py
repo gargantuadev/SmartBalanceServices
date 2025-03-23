@@ -12,13 +12,10 @@ def create_app():
     CORS(app)  # Enable CORS
     app.config.from_object(DevelopmentConfig)
 
-    """app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-    db.init_app(app)
-
+    from .models import Base
+    from .db import engine
     with app.app_context():
-        db.create_all()"""
+        Base.metadata.create_all(engine)
 
     app.register_blueprint(categories_bp, url_prefix='/categories')
     #app.register_blueprint(api_bp, url_prefix='/api')  # Register the API blueprint
