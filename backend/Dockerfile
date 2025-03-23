@@ -19,4 +19,4 @@ ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
 
 # Start the Flask application using gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "api:create_app()"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "api:create_app"]
